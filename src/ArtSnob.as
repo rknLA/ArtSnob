@@ -3,9 +3,9 @@ package
 	import net.flashpunk.Engine;
 	import net.flashpunk.FP;
 	
-	public class InventoryAndThwart extends Engine
+	public class ArtSnob extends Engine
 	{
-		public function InventoryAndThwart()
+		public function ArtSnob()
 		{
 			super(640, 480, 60, false);
 			FP.world = new Level1;

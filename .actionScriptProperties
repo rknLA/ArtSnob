@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<actionScriptProperties mainApplicationPath="InventoryAndThwart.as" projectUUID="f5e853fa-03ef-4187-833c-8cbc94765689" version="6">
+<actionScriptProperties mainApplicationPath="ArtSnob.as" projectUUID="b46dd78e-a5db-4793-8fc2-4020a0b07b76" version="6">
   <compiler additionalCompilerArguments="-locale en_US" autoRSLOrdering="true" copyDependentFiles="true" fteInMXComponents="false" generateAccessible="true" htmlExpressInstall="true" htmlGenerate="true" htmlHistoryManagement="true" htmlPlayerVersionCheck="true" includeNetmonSwc="false" outputFolderPath="bin-debug" sourceFolderPath="src" strict="true" targetPlayerVersion="0.0.0" useApolloConfig="false" useDebugRSLSwfs="true" verifyDigests="true" warn="true">
     <compilerSourcePath/>
     <libraryPath defaultLinkType="0">
@@ -28,7 +28,7 @@
     <sourceAttachmentPath/>
   </compiler>
   <applications>
-    <application path="InventoryAndThwart.as"/>
+    <application path="ArtSnob.as"/>
   </applications>
   <modules/>
   <buildCSSFiles/>
