@@ -5,6 +5,7 @@ package
 	import net.flashpunk.graphics.Spritemap;
 	import net.flashpunk.utils.Input;
 	import net.flashpunk.utils.Key;
+	import flash.geom.Point;
 	
 	public class Snob extends Entity
 	{
@@ -17,9 +18,11 @@ package
 		private var vSpeed:Number = 100;
 		
 		
-		public function Snob()
+		public function Snob(start:Point)
 		{
 			super();
+			x = start.x;
+			y = start.y;
 			snobImage.add("stand",[0],0,false);
 			snobImage.add("sstand",[6],0,false);
 			snobImage.add("bstand",[3],0,false);

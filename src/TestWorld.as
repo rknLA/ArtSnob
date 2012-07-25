@@ -1,8 +1,11 @@
 package
 {
+	import flash.geom.Point;
+	
 	import net.flashpunk.FP;
 	import net.flashpunk.World;
 	import net.flashpunk.graphics.Backdrop;
+	import net.flashpunk.graphics.Tilemap;
 	
 	public class TestWorld extends World
 	{
@@ -14,9 +17,11 @@ package
 		public function TestWorld()
 		{
 			super();
-			add(new Snob);
-			addGraphic(backdrop,10,0,0);
-			
+			var startingPoint:Point = new Point(10, 300);
+			add(new Snob(startingPoint));
+			//addGraphic(backdrop,10,0,0);
+			add(new Outside);
+
 		}
 		
 		override public function update():void
