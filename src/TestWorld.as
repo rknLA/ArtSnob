@@ -17,7 +17,7 @@ package
 		public function TestWorld()
 		{
 			super();
-			var startingPoint:Point = new Point(10, 440);
+			var startingPoint:Point = new Point(200, 600);
 			add(new Snob(startingPoint));
 			//addGraphic(backdrop,10,0,0);
 			add(new Outside);
