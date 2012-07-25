@@ -21,6 +21,9 @@ package
 		private const playAreaColumns:Number 		= 40;
 		private const playAreaRows:Number			= 30;
 		
+		private const bottomRowBound:Number			= playAreaRows + wallOffset;
+		private const rightColumnBound:Number		= playAreaColumns + wallOffset;
+		
 		private const totalAreaColumns:Number 		= playAreaColumns + 2 * wallOffset;
 		private const totalAreaRows:Number 			= playAreaRows + 2 * wallOffset;
 		
@@ -29,6 +32,8 @@ package
 		
 		private const totalAreaWidthPixels:Number	= totalAreaColumns * tileWidth;
 		private const totalAreaHeightPixels:Number	= totalAreaRows * tileHeight;
+		
+		
 			
 		public function Outside()
 		{
@@ -46,7 +51,10 @@ package
 			_tiles.setRect(playAreaColumns + wallOffset, playAreaRows + wallOffset, totalAreaRows + wallOffset, wallOffset, WALL_TILE);
 			
 			//set up some dark grass.
-			//_tiles.setRect(
+			_tiles.setRect(wallOffset, bottomRowBound - 10, 20, 5, TALL_GRASS_TILE);
+			
+			//the river
+			_tiles.setRect(wallOffset, bottomRowBound - 13, 20, 3, WATER_TILE);
 		}
 		
 	}
