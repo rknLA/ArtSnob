@@ -8,7 +8,7 @@ package
 		public function ArtSnob()
 		{
 			super(640, 480, 60, false);
-			FP.world = new Level1;
+			FP.world = new OutsideMap;
 		}
 	}
 }
