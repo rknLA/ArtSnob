@@ -1,10 +1,11 @@
 package
 {
 	import net.flashpunk.Entity;
-	
+	import net.flashpunk.graphics.Image;
+
 	public class Water extends Entity
 	{
-		[Embed(source = 'assets/WATER.png')]
+		[Embed(source = 'assets/water.png')]
 		private const WATER:Class;
 		
 		private var waterImage:Image = new Image(WATER);

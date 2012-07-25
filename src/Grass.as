@@ -1,6 +1,7 @@
 package
 {
 	import net.flashpunk.Entity;
+	import net.flashpunk.graphics.Image;
 	
 	public class Grass extends Entity
 	{
@@ -9,10 +10,9 @@ package
 		
 		private var grassImage:Image = new Image(GRASS);
 		
-		public function Wall()
+		public function Grass()
 		{
 			super();
-			
 			graphic = grassImage;
 			type = "grass";
 			layer = 1;

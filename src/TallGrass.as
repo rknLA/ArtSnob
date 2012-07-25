@@ -1,6 +1,7 @@
 package
 {
 	import net.flashpunk.Entity;
+	import net.flashpunk.graphics.Image;
 	
 	public class TallGrass extends Entity
 	{

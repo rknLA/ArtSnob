@@ -1,5 +1,6 @@
 package
 {
+	import net.flashpunk.FP;
 	import net.flashpunk.Entity;
 	import net.flashpunk.graphics.Tilemap;
 	import net.flashpunk.masks.Grid;
@@ -53,38 +54,47 @@ package
 			3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3
 			);
 			
+		private const mapWidth = 40;
+		private const mapHeight = 30;
 		
+		private const tileSize = 16;
+		
+		private function createMap()
+		{
+			var row:int = 0;
+			for (var i:int = 0; i < map.length; i++)
+			{
+				var col = i % mapWidth;
+				if (col == 0) row += 1;
+				
+				var tileIndex:int = map[i];
+				
+				var e:Entity;
+				
+				switch(tileIndex) 
+				{
+					case PATH_TILE:
+						FP.world.add(e = new Grass());
+						break;
+					case WATER_TILE:
+						FP.world.add(e = new Water());
+						break;
+					case TALL_GRASS_TILE:
+						FP.world.add(e = new TallGrass());
+						break;
+					default:
+						FP.world.add(e = new Wall());
+						break;
+				}
+				
+				e.x = col * tileSize;
+				e.y = (row-1) * tileSize;
+			}
+		}
 			
 		public function Outside()
 		{
-			_tiles = new Tilemap(WORLD_TILESET, totalAreaWidthPixels, totalAreaHeightPixels, tileWidth, tileHeight);
-			graphic = _tiles;
-			layer = 1;
-			
-			_grid = new Grid(totalAreaWidthPixels, totalAreaHeightPixels, tileWidth, tileHeight);
-			mask = _grid;
-			
-			//set up the main grassland.
-			_tiles.setRect(0, 0, totalAreaColumns, totalAreaRows, PATH_TILE);
-			
-			//set up the perimeter wall.
-			_tiles.setRect(0, 0, wallOffset, totalAreaColumns, WALL_TILE);
-			_tiles.setRect(0, 0, totalAreaRows, wallOffset, WALL_TILE);
-			_tiles.setRect(playAreaColumns + wallOffset, 0, wallOffset, totalAreaColumns, WALL_TILE);
-			_tiles.setRect(playAreaColumns + wallOffset, playAreaRows + wallOffset, totalAreaRows + wallOffset, wallOffset, WALL_TILE);
-			
-			//grid
-			_grid.setRect(0, 0, wallOffset, totalAreaColumns, true);
-			_grid.setRect(0, 0, totalAreaRows, wallOffset, true);
-			_grid.setRect(playAreaColumns + wallOffset, 0, wallOffset, totalAreaColumns, true);
-			_grid.setRect(playAreaColumns + wallOffset, playAreaRows + wallOffset, totalAreaRows + wallOffset, wallOffset, true);
-			
-			
-			//set up some dark grass.
-			_tiles.setRect(wallOffset, bottomRowBound - 10, 20, 5, TALL_GRASS_TILE);
-			
-			//the river
-			_tiles.setRect(wallOffset, bottomRowBound - 13, 20, 3, WATER_TILE);
+			createMap();
 			
 		}
 		
