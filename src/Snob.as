@@ -26,7 +26,7 @@ package
 			snobImage.add("fwalk",[1,2],5,true);
 			snobImage.add("swalk",[7,8],5,true);
 			snobImage.add("bwalk",[4,5],5,true);
-			//snobImage.scale = 2;
+			snobImage.scale = 1;
 			graphic = snobImage;
 		}
 		
@@ -90,6 +90,9 @@ package
 				
 				y += 0;
 			}
+			
+			FP.camera.x = x - FP.screen.width/2;
+			FP.camera.y = y - FP.screen.height/2;
 			
 			super.update();
 		}
