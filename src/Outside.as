@@ -16,7 +16,7 @@ package
 		private const TALL_GRASS_TILE:Number = 2;
 		private const WALL_TILE:Number = 3;
 		
-		private const wallOffset:Number 			= 11;
+		private const wallOffset:Number 			= 1;
 		
 		private const playAreaColumns:Number 		= 40;
 		private const playAreaRows:Number			= 30;
