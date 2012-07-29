@@ -21,9 +21,10 @@ package
 			BattleWorld.currentEnemy = this;
 		}
 		
-		override public function enemyAttack():void
+		override public function enemyAttack():int
 		{
 			//specific attack for blue enemy
+			return 0;
 		}
 	}
 }

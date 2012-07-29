@@ -19,9 +19,10 @@ package
 			type = "enemy";
 		}
 		
-		public function enemyAttack():void
+		//returns the amount of damage to the player
+		public function enemyAttack():int
 		{
-			
+			return 0;	
 		}
 		
 		override public function added():void
