@@ -11,7 +11,7 @@ package
 		public function ArtSnob()
 		{
 			super(320,240,60,false);
-			FP.world = new TestWorld;
+			FP.world = new BattleWorld;
 			FP.screen.scale = 2;
 		}
 	}

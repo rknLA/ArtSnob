@@ -20,10 +20,12 @@ package
 		public static const FRICTION:Number = MAX_SPEED / (MAX_SPEED + ACCEL);
 		public static const MIN_SPEED:Number = ACCEL * FRICTION;
 		
-		private var hSpeed:Number = 100;
-		private var vSpeed:Number = 100;
+		//private var hSpeed:Number = 100;
+		//private var vSpeed:Number = 100;
 		
 		private var speed:Point = new Point(0,0);
+		
+		private var encTimer:Number;
 		
 		
 		public function Snob()
@@ -40,6 +42,9 @@ package
 			snobImage.scale = 1;
 			graphic = snobImage;
 			setHitbox(16,16);
+			layer = -1;
+			
+			encTimer = FP.rand(10);
 		}
 		
 		override public function update():void
@@ -118,6 +123,16 @@ package
 			
 			FP.camera.x = x - FP.screen.width/2;
 			FP.camera.y = y - FP.screen.height/2;
+			
+			if (collide("tallgrass",x,y))
+			{
+				encTimer -= FP.elapsed;
+				if (encTimer < 0)
+				{
+					encTimer = FP.rand(10);
+					FP.world = new BattleWorld;
+				}
+			}
 			
 			super.update();
 		}
