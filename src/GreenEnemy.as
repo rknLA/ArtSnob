@@ -19,10 +19,12 @@ package
 			value = 10;
 		}
 		
-		override public function enemyAttack():int
+		override public function enemyAttack():Object
 		{
-			//specific attack for green enemy
-			return 0;
+			return {
+				"damage": 0,
+				"text": "The green enemy attacked!"
+			};	
 		}
 	}
 }

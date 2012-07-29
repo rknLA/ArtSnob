@@ -19,10 +19,17 @@ package
 			value = 10;
 		}
 		
-		override public function enemyAttack():int
+		override public function enemyAttack():Object
 		{
 			//specific attack for blue enemy
-			return 0;
+			//do random stuff here to determine damage, text, etc
+		
+			var results:Object = {
+				"damage": 0,
+				"text": "The Blue enemy attacked!"
+			};	
+			
+			return results;
 		}
 	}
 }

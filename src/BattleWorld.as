@@ -43,7 +43,18 @@ package
 		{
 			//draw the player selection stuff
 			battleState = "playerActionSelect";
+
+		}
+		
+		private function finalizePlayerActionSelection(/*with action? */):void
+		{
+			var enemyResults:Object = theEnemy.enemyAttack();
 			
+			//subtract enemyResults.damage, display enemyResults.text, etc.
+			
+			// battlesnob.attack
+			
+			battleState = "doingBattle";
 		}
 		
 		
@@ -82,12 +93,15 @@ package
 						//hide menu
 						//select enemy attack
 						//do battle animation
-						battleState = "doingBattle"
+						finalizePlayerActionSelection(/*with action? */);
 					}
 					break;
 				case "doingBattle":
+					//do battle animation,
+					// this might not be necessary if the animation is done in finalizePlayerActionSelection with a callback that checks for victory or defeat.
 					break;
 				case "victory":
+					//display a victory message and listen for enter?
 					break;
 				case "loss":
 					break;

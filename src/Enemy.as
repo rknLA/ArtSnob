@@ -20,9 +20,12 @@ package
 		}
 		
 		//returns the amount of damage to the player
-		public function enemyAttack():int
+		public function enemyAttack():Object
 		{
-			return 0;	
+			return {
+				"damage": 0,
+				"text": "A generic enemy attacked!"
+			};	
 		}
 		
 		override public function added():void
