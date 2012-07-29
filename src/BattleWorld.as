@@ -33,7 +33,7 @@ package
 			battleState = "enteringBattle";
 			
 			var callback:Function = function():void {
-				
+				showPlayerActionSelection();
 			};
 			
 			//do entering battle animation with the above callback
@@ -64,7 +64,7 @@ package
 		
 		override public function begin():void
 		{
-			
+			initializeBattleStateMachine();
 		}
 		
 		override public function update():void
