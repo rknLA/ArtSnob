@@ -1,12 +1,12 @@
 package
 {
 	import net.flashpunk.graphics.Image;
-
-	public class EnemyTest extends Enemy
+	
+	public class BlueEnemy extends Enemy
 	{
-		private var enemyImage:Image = Image.createRect(32,40,0x00FF00);
+		private var enemyImage:Image = Image.createRect(32,40,0x0000FF);
 		
-		public function EnemyTest()
+		public function BlueEnemy()
 		{
 			super();
 			graphic = enemyImage;

@@ -13,6 +13,11 @@ package
 		
 		//private var battleEnemy:Entity;
 		
+		private const enemyTypes:Array = [
+			GreenEnemy,
+			BlueEnemy
+		];
+		
 		private var snobTurn:Boolean;
 		
 		public static var snobSelect:String;
@@ -22,13 +27,24 @@ package
 		
 		public static var currentEnemy:Enemy;
 		
+		private function initializeEnemy():Enemy
+		{
+			var enemyIndex:int = FP.rand(enemyTypes.length);
+			
+			return new enemyTypes[enemyIndex];
+		}
+		
 		public function BattleWorld()
 		{
 			super();
 			//battleEnemy = new Entity(-50,25,curatorImage);
 			add(new BattleSnob);
 			//add(battleEnemy);
-			add(new EnemyTest);
+			
+			var theEnemy:Enemy = initializeEnemy();
+			trace(theEnemy);
+			add(theEnemy);
+			
 			add(new BattleMenu);
 			
 			
