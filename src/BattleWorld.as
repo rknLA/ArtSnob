@@ -16,7 +16,7 @@ package
 			BlueEnemy
 		];
 		
-		public static var theEnemy:Enemy;
+		public var theEnemy:Enemy;
 		
 		private function initializeEnemy():Enemy
 		{
@@ -25,10 +25,24 @@ package
 		}
 		
 		
+		private var battleState:String;
 		
 		
 		private function initializeBattleStateMachine():void
 		{
+			battleState = "enteringBattle";
+			
+			var callback:Function = function():void {
+				
+			};
+			
+			//do entering battle animation with the above callback
+		}
+		
+		private function showPlayerActionSelection():void
+		{
+			//draw the player selection stuff
+			battleState = "playerActionSelect";
 			
 		}
 		
@@ -55,9 +69,29 @@ package
 		
 		override public function update():void
 		{
-			//currentEnemy.hp -= BattleSnob.attack - currentEnemy.defense;
-			
-			trace(theEnemy.hp);
+			switch (battleState) {
+				case "enteringBattle":
+					//don't do anything?  don't listen for keys probably..
+					break;
+				case "playerActionSelect":
+					//check for keystrokes, move the menu screen around appropriately
+					var actionSelected:int;
+					
+					if (actionSelected)	//set actionSelected with keystroke
+					{
+						//hide menu
+						//select enemy attack
+						//do battle animation
+						battleState = "doingBattle"
+					}
+					break;
+				case "doingBattle":
+					break;
+				case "victory":
+					break;
+				case "loss":
+					break;
+			}
 			
 			super.update();
 		}
