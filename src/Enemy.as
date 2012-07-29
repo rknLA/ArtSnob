@@ -19,6 +19,11 @@ package
 			type = "enemy";
 		}
 		
+		public function enemyAttack():void
+		{
+			
+		}
+		
 		override public function added():void
 		{	
 			var enemyTween:VarTween = new VarTween();
