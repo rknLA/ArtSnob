@@ -16,17 +16,23 @@ package
 			BlueEnemy
 		];
 		
-		private var battleArray:Array = [];
-		
 		public static var theEnemy:Enemy;
-		
 		
 		private function initializeEnemy():Enemy
 		{
 			var enemyIndex:int = FP.rand(enemyTypes.length);
-			
 			return new enemyTypes[enemyIndex];
 		}
+		
+		
+		
+		
+		private function initializeBattleStateMachine():void
+		{
+			
+		}
+		
+		
 		
 		public function BattleWorld()
 		{

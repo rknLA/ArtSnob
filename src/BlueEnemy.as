@@ -17,8 +17,6 @@ package
 			pp = 2;
 			xp = 5;
 			value = 10;
-			
-			BattleWorld.currentEnemy = this;
 		}
 		
 		override public function enemyAttack():int
