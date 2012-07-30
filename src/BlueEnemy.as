@@ -1,5 +1,6 @@
 package
 {
+	import net.flashpunk.FP;
 	import net.flashpunk.graphics.Image;
 	
 	public class BlueEnemy extends Enemy
@@ -15,10 +16,25 @@ package
 			attack = 2;
 			defense = 2;
 			pp = 2;
-			xp = 5;
+			xp = 10;
 			value = 10;
 			
-			BattleWorld.currentEnemy = this;
+			BattleMenu.blank = "A Wild Blue Dude Has Appeared!";
+		}
+		
+		override public function enemyAttack():Object
+		{
+			//specific attack for blue enemy
+			//do random stuff here to determine damage, text, etc
+			
+			var results:Object = {
+				"damage": FP.rand(5),
+				"text": "The Blue enemy attacked!",
+				"name": "Blue Enemy"
+			};	
+			
+			return results;
+			
 		}
 	}
 }

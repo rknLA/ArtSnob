@@ -16,7 +16,7 @@ package
 		private var snobImage:Spritemap = new Spritemap(SNOB,14,16);
 		
 		public static const MAX_SPEED:Number = 3.0;
-		public static const ACCEL:Number = 0.5;
+		public static const ACCEL:Number = 0.25;
 		public static const FRICTION:Number = MAX_SPEED / (MAX_SPEED + ACCEL);
 		public static const MIN_SPEED:Number = ACCEL * FRICTION;
 		
@@ -124,12 +124,14 @@ package
 			FP.camera.x = x - FP.screen.width/2;
 			FP.camera.y = y - FP.screen.height/2;
 			
+			FP.clampInRect(FP.camera,0,0,FP.screen.width,FP.screen.height);
+			
 			if (collide("tallgrass",x,y))
 			{
 				encTimer -= FP.elapsed;
 				if (encTimer < 0)
 				{
-					encTimer = FP.rand(10);
+					encTimer = FP.rand(1);
 					FP.world = new BattleWorld;
 				}
 			}
